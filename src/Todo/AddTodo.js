@@ -23,13 +23,13 @@ function AddTodo({onCreate}) {
         event.preventDefault()
         if (input.value().trim()) {
             onCreate(input.value())
-            input.clear()   
+            input.clear()
             // setValue('')
         }
     }
     return (
         <form style={{marginBottom: '1rem'}} onSubmit={submitHandler}>
-            <input {...input} />
+            <input {...input.bind} />
             <button type="submit">Add todo</button>
         </form>
     )
